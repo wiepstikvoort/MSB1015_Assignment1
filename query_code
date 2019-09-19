@@ -1,0 +1,37 @@
+<html>
+<h1> SPARQL Request</h1> 
+<p>This SPARQL request will show me the drugs targetting specific genes.<br>
+To be more precise, these results will answer the question:<br>
+<em>What are drugs targeting genes linked to autosomal recessive distal spinal muscular atrophy 2?</em><br>
+However, at this stage, I will first try to retrieve a list of drugs. </p>
+
+<head>
+<!-- Initialize a global WBK function -->
+<script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
+<!-- Initialize a global wdk object using the WBK object -->
+<script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
+</head>
+<body>
+  <pre id="output"></pre>
+ 
+  <script>
+    query = `SELECT ?drugLabel ?genessmaLabel ?proteinLabel 
+    WHERE {?drug wdt:P231 ?cas.
+    ?genessma wdt:P2293* wd:Q16944450.
+    ?genessma wdt:P688 ?protein.
+    ?drug wdt:P129 ?protein.
+    SERVICE wikibase:label { bd:serviceParam wikibase:language '[AUTO_LANGUAGE],en'. } 
+    }`
+    fetch(
+      wdk.sparqlQuery(query)
+    ).then( response => response.json()
+    ).then( wdk.simplify.sparqlResults
+    ).then(
+      function (response) {
+        document.getElementById('output').innerHTML =
+          JSON.stringify(response, undefined, 2);
+      }
+    )
+  </script>
+
+</body>
