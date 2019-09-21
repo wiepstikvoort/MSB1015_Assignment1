@@ -35,11 +35,33 @@ However, at this stage, I will first try to retrieve a list of drugs. </p>
           JSON.stringify(response, undefined, 2); */
           
 		  /* this next bit of code creates an html table*/
-    var html = "<table>";
+    var html = "<style>";
+    html += "table, th, td {";
+    html += "border: 1px solid black;";
+    html += "border-collapse: collapse;";
+    html += "}";
+    html += "th {";
+    html += "padding: 8px;";
+    html += "}";
+    html += "td {";
+    html += "padding: 5px;";
+    html += "}";
+    html += "th {";
+    html += "text-align: left;";
+    html += "}";
+    html += "</style>"
+    html += "<table>";
+    html += "<caption>Query results</caption>"
     html += "<tr>";
-    html += "<td>Gene</td>";
-    html += "<td>Drug</td>";
-    html += "</tr>";
+    html += "<th>Gene</th>";
+    html += "<th>Drug</th>";
+    html += "</tr>"
+	
+    html += "<tr>";
+    html += "<th>Gene</th>";
+    html += "<th>Drug</th>";
+    html += "</tr>"
+	
     for(var i=0; i< response.length;i++) {
     html += "<tr>";
     html += "<td>"+response[i].genessmaLabel+"</td>";
