@@ -28,10 +28,29 @@ However, at this stage, I will first try to retrieve a list of drugs. </p>
     ).then( wdk.simplify.sparqlResults
     ).then(
       function (response) {
-        document.getElementById('output').innerHTML =
-          JSON.stringify(response, undefined, 2);
+      
+		/*uncomment the next 2 lines, and comment the code for the html table to output the query in a json format
+    Leave the { and the ) at line 52 and 53 */
+    /*       document.getElementById('output').innerHTML =
+          JSON.stringify(response, undefined, 2); */
+          
+		  /* this next bit of code creates an html table*/
+    var html = "<table>";
+    html += "<tr>";
+    html += "<td>Gene</td>";
+    html += "<td>Drug</td>";
+    html += "</tr>";
+    for(var i=0; i< response.length;i++) {
+    html += "<tr>";
+    html += "<td>"+response[i].genessmaLabel+"</td>";
+    html += "<td>"+response[i].drugLabel+"</td>";
+    html += "</tr>";
+    }
+    html += "</table>"
+     document.getElementById('output').innerHTML = html;
+     
       }
-    )
+    ) 
   </script>
 
 </body>
