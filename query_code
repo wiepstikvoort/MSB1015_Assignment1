@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <font face = "Calibri">
-<h1> SPARQL Request</h1> 
-<p>This SPARQL request will show me the drugs targetting specific genes.<br>
-To be more precise, these results will answer the question:<br>
+<h1>SPARQL Request</h1> 
+<p>SPARQL Protocol And RDF Query Language, or for short SPARQL, is the language that was used to obtain the results needed for answering the research question. The results shown rely are retrieved from the wikidatabase. 
+The following research question was investigated:<br>
 <em>What are drugs targeting genes linked to autosomal recessive distal spinal muscular atrophy 2?</em><br>
-However, at this stage, I will first try to retrieve a list of drugs. </p>
+Distal Spinal Muscular Atrophy 2 (DSMA2) is a genetic disorder ..... (add more information). 
+
+</p>
 </font>
 
 <head>
