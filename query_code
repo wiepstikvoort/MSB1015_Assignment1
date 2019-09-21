@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <h1> SPARQL Request</h1> 
 <p>This SPARQL request will show me the drugs targetting specific genes.<br>
@@ -50,6 +51,7 @@ However, at this stage, I will first try to retrieve a list of drugs. </p>
     html += "text-align: left;";
     html += "}";
     html += "</style>"
+    html += '<font size = "4" face = "Arial">';
     html += "<table>";
     html += "<caption>Query results</caption>"
     html += "<tr>";
@@ -69,6 +71,7 @@ However, at this stage, I will first try to retrieve a list of drugs. </p>
     html += "</tr>";
     }
     html += "</table>"
+    html += </font>
      document.getElementById('output').innerHTML = html;
      
       }
