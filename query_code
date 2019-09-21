@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+<font face = "Calibri">
 <h1> SPARQL Request</h1> 
 <p>This SPARQL request will show me the drugs targetting specific genes.<br>
 To be more precise, these results will answer the question:<br>
 <em>What are drugs targeting genes linked to autosomal recessive distal spinal muscular atrophy 2?</em><br>
 However, at this stage, I will first try to retrieve a list of drugs. </p>
+</font>
 
 <head>
 <!-- Initialize a global WBK function -->
@@ -51,7 +53,7 @@ However, at this stage, I will first try to retrieve a list of drugs. </p>
     html += "text-align: left;";
     html += "}";
     html += "</style>"
-    html += '<font size = "4" face = "Arial">';
+    html += '<font size = "4" face = "Calibri Light">';
     html += "<table>";
     html += "<caption>Query results</caption>"
     html += "<tr>";
