@@ -31,7 +31,7 @@ However, at this stage, I will first try to retrieve a list of drugs. </p>
       function (response) {
       
 		/*uncomment the next 2 lines, and comment the code for the html table to output the query in a json format
-    Leave the { and the ) at line 52 and 53 */
+    Leave the { and the ) at line 77 and 78 */
     /*       document.getElementById('output').innerHTML =
           JSON.stringify(response, undefined, 2); */
           
