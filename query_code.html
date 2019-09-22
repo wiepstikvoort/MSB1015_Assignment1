@@ -2,19 +2,21 @@
 <html>
 <font face = "Calibri">
 <h1>SPARQL Request</h1> 
-<p>SPARQL Protocol And RDF Query Language, or for short SPARQL, is the language that was used to obtain the results needed for answering the research question. The results shown rely are retrieved from the wikidatabase. 
-The following research question was investigated:<br>
+<p>SPARQL Protocol And RDF Query Language, or for short SPARQL, is the language that was used to <br>
+obtain the results needed for answering the research question. The results shown are retrieved <br>
+from the wikidatabase. The following research question was investigated:<br>
 <em>What are drugs targeting genes linked to autosomal recessive distal spinal muscular atrophy 2?</em><br>
-Distal Spinal Muscular Atrophy 2 (DSMA2) is a genetic disorder ..... (add more information). 
+Distal Spinal Muscular Atrophy 2 (DSMA2) is a genetic disorder, charachterized by progressive <br>
+muscular atrophy in the limbs (the distal parts of the body). 
 
 </p>
 </font>
-
 <head>
 <!-- Initialize a global WBK function -->
 <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
 <!-- Initialize a global wdk object using the WBK object -->
 <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
+
 </head>
 <body>
   <pre id="output"></pre>
@@ -63,14 +65,9 @@ Distal Spinal Muscular Atrophy 2 (DSMA2) is a genetic disorder ..... (add more i
     html += "<th>Drug</th>";
     html += "</tr>"
 	
-    html += "<tr>";
-    html += "<th>Gene</th>";
-    html += "<th>Drug</th>";
-    html += "</tr>"
-	
     for(var i=0; i< response.length;i++) {
     html += "<tr>";
-    html += "<td>"+response[i].genessmaLabel+"</td>";
+    html += "<td><em>"+response[i].genessmaLabel+"</em></td>";
     html += "<td>"+response[i].drugLabel+"</td>";
     html += "</tr>";
     }
@@ -83,3 +80,4 @@ Distal Spinal Muscular Atrophy 2 (DSMA2) is a genetic disorder ..... (add more i
   </script>
 
 </body>
+</html>
