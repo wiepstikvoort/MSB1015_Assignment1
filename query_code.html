@@ -17,11 +17,14 @@ muscular atrophy in the limbs (the distal parts of the body).
 <!-- Initialize a global wdk object using the WBK object -->
 <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
 
+
 </head>
+
 <body>
   <pre id="output"></pre>
- 
+
   <script>
+
     query = `SELECT ?drugLabel ?genessmaLabel ?proteinLabel 
     WHERE {?drug wdt:P231 ?cas.
     ?genessma wdt:P2293* wd:Q16944450.
@@ -35,35 +38,35 @@ muscular atrophy in the limbs (the distal parts of the body).
     ).then( wdk.simplify.sparqlResults
     ).then(
       function (response) {
-      
-		/*uncomment the next 2 lines, and comment the code for the html table to output the query in a json format
+  
+			/*uncomment the next 2 lines, and comment the code for the html table to output the query in a json format
     Leave the { and the ) at line 79 and 80 */
     /*       document.getElementById('output').innerHTML =
           JSON.stringify(response, undefined, 2); */
-          
-		  /* this next bit of code creates an html table*/
+	
     var html = "<style>";
-    html += "table, th, td {";
-    html += "border: 1px solid black;";
-    html += "border-collapse: collapse;";
-    html += "}";
-    html += "th {";
-    html += "padding: 8px;";
-    html += "}";
-    html += "td {";
-    html += "padding: 5px;";
-    html += "}";
-    html += "th {";
-    html += "text-align: left;";
-    html += "}";
-    html += "</style>"
-    html += '<font size = "4" face = "Calibri Light">';
-    html += "<table>";
-    html += "<caption>Query results</caption>"
+	html += "table, th, td {";
+	html += "border: 1px solid black;";
+	html += "border-collapse: collapse;";
+	html += "}";
+	html += "th {";
+	html += "padding: 8px;";
+	html += "}";
+	html += "td {";
+	html += "padding: 5px;";
+	html += "}";
+	html += "th {";
+	html += "text-align: left;";
+	html += "}";
+	html += "</style>";
+	html += '<font size = "4" face = "Calibri Light">';
+	html += "<table>";
+	html += "<caption>Query results</caption>"
     html += "<tr>";
     html += "<th>Gene</th>";
     html += "<th>Drug</th>";
-    html += "</tr>"
+    html += "</tr>";
+	
 	
     for(var i=0; i< response.length;i++) {
     html += "<tr>";
@@ -71,13 +74,14 @@ muscular atrophy in the limbs (the distal parts of the body).
     html += "<td>"+response[i].drugLabel+"</td>";
     html += "</tr>";
     }
-    html += "</table>"
-    html += </font>
+	
+    html += "</table>";
+	html += "</font>"
      document.getElementById('output').innerHTML = html;
-     
       }
-    ) 
+    )
+  
   </script>
-
+  
 </body>
 </html>
