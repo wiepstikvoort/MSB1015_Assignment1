@@ -4,7 +4,9 @@ This is the repository for Assignment 1 from the course MSB1015 Scientific Progr
 
 Student number: i6092796  
 Course: MSB1015 Scientific Programming  
+Teacher: Egon Willighagen  
 Academic year: 2019-2020  
+Faculty of Science and Engineering  
 Maastricht University  
 
 ## List of author(s)
